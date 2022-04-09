@@ -43,7 +43,7 @@ int Calc(char operat, int left, int right) {
 }
 
 std::string infx2pstfx(std::string inf) {
-    char fr;
+    char fr = 0;
     TStack <char, 500> st1;
     std::string str;
     for (int i = 0; i < inf.length(); i++) {
@@ -87,18 +87,18 @@ std::string infx2pstfx(std::string inf) {
     return str;
 }
 
-int eval(std::string pref) {
+int eval(std::string post) {
    TStack <int, 500> st2;
     int res = 0, left = 0, right = 0;
-    for (int i = 0; i < pref.length(); i++) {
-        if ((Prior(pref[i]) == -1) && pref[i] != ' ') {
-            st2.push(pref[i] - '0');
-        } else if (Prior(pref[i]) > 1) {
+    for (int i = 0; i < post.length(); i++) {
+        if ((Prior(post[i]) == -1) && post[i] != ' ') {
+            st2.push(post[i] - '0');
+        } else if (Prior(post[i]) > 1) {
             right = st2.get();
             st2.del();
             left = st2.get();
             st2.del();
-            st2.push(Calc(pref[i], left, right));
+            st2.push(Calc(post[i], left, right));
         }
     }
     res = st2.get();
