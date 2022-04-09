@@ -16,15 +16,15 @@ bool Empty() const {
 return head == -1;
 }
 bool Full() const {
-return head == size-1;
+return head == (size-1);
 }
-voidd del() {
+void del() {
 if(head >= 0)
 head--;
 }
 void push(T value) {
 if(not(Full()))
-a[++head] = value;
+a[head + 1] = value;
 }
 };
 #endif  // INCLUDE_TSTACK_H_
