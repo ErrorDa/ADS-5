@@ -4,8 +4,8 @@
 #include <iostream>
 #include "tstack.h"
 
-int Prior(char pr) {
-    switch (pr) {
+int Prior(char pro) {
+    switch (pro) {
     case '(':
       return 0;
     case ')':
@@ -78,7 +78,7 @@ std::string infx2pstfx(std::string inf) {
             str.push_back(' ');
         }
     }
-    while (not(st1.Empty())) {
+    while (!(st1.Empty())) {
         str.push_back(st1.get());
         str.push_back(' ');
         st1.del();
