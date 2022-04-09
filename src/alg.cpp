@@ -10,13 +10,13 @@ int Prior(char pro) {
       return 0;
     case ')':
       return 1;
-    case '+': 
+    case '+':
       return 2;
-    case '-': 
+    case '-':
       return 2;
-    case '*': 
+    case '*':
       return 3;
-    case '/': 
+    case '/':
       return 3;
     default:
         return -1;
@@ -88,7 +88,7 @@ std::string infx2pstfx(std::string inf) {
 }
 
 int eval(std::string post) {
-   TStack <int, 500> st2;
+    TStack <int, 500> st2;
     int res = 0, left = 0, right = 0;
     for (int i = 0; i < post.length(); i++) {
         if ((Prior(post[i]) == -1) && post[i] != ' ') {
