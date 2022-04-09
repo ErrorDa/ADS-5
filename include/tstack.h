@@ -19,12 +19,12 @@ bool Full() const {
 return head == (size-1);
 }
 void del() {
-if(head >= 0)
+if(!Empty())
 head--;
 }
 void push(T value) {
-if(not(Full()))
-a[head + 1] = value;
+if(!(Full()))
+a[++head] = value;
 }
 };
 #endif  // INCLUDE_TSTACK_H_
