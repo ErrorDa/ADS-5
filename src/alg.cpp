@@ -29,7 +29,7 @@ int Prior(char pr) {
 }
 
 int Calc(char operat, int left, int right) {
-    switch (operation) {
+    switch (operat) {
     case '+':
         return left + right;
         break;
@@ -74,7 +74,7 @@ std::string infx2pstfx(std::string inf) {
                     str.push_back(' ');
                     st1.del();
                 }
-                if (stack1.isEmpty())
+                if (st1.Empty())
                     fr = inf[i];
                 st1.push(inf[i]);
             }
